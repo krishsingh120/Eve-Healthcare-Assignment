@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from app.core.config import settings
-from app.api.endpoints import auth
+from app.api.endpoints import auth, centres, tests
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
@@ -9,6 +9,8 @@ app = FastAPI(
 )
 
 app.include_router(auth.router, prefix=f"{settings.API_V1_STR}/auth", tags=["auth"])
+app.include_router(centres.router, prefix=f"{settings.API_V1_STR}/centres", tags=["centres"])
+app.include_router(tests.router, prefix=f"{settings.API_V1_STR}/tests", tags=["tests"])
 
 @app.get("/health")
 async def health_check():
