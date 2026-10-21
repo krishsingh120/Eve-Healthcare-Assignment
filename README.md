@@ -64,3 +64,6 @@ A diagnostic test booking and simulated payment platform backend service.
 1. **Redis Caching**: Cache the `/centres` and `/tests` lists to reduce DB read load.
 2. **Celery**: Offload payment simulation processing and email notifications to background tasks.
 3. **Rate Limiting**: Implement strict rate limiting for `/auth/login` and `/payments/webhook` to prevent abuse.
+
+
+© 2026 Krish Singh. All rights reserved. See [LICENSE](./LICENSE) for usage restrictions.
